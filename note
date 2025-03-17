@@ -45,3 +45,13 @@
 ✅ **Use environment variables** to pass database credentials.  
 
 🚀 **Now your Flask app can connect to PostgreSQL in Docker!**
+
+
+docker run -d --name postgres_container \
+  --network my_network \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=password \
+  -e POSTGRES_DB=mydatabase \
+  -v app1:/var/lib/postgresql/data \
+  -p 5432:5432 postgres:latest
+
