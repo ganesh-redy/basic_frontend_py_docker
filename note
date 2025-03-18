@@ -55,3 +55,39 @@ docker run -d --name postgres_container \
   -v app1:/var/lib/postgresql/data \
   -p 5432:5432 postgres:latest
 
+
+
+
+
+
+[root@sfty-lab2171 new_cluster_post_sql]# kubectl exec -it backend-777b599488-8ccmf -- psql -U postgres -d mydatabase
+psql (17.4 (Debian 17.4-1.pgdg120+2))
+Type "help" for help.
+
+mydatabase=# select * from users
+mydatabase-# tabels
+mydatabase-# tables
+mydatabase-# \dt
+         List of relations
+ Schema | Name  | Type  |  Owner
+--------+-------+-------+----------
+ public | users | table | postgres
+(1 row)
+
+mydatabase-# ^C
+mydatabase=# SELECT * FROM users;
+ id | name |        email
+----+------+----------------------
+  1 | sam  | greddy@softility.com
+(1 row)
+
+mydatabase=# SELECT * FROM users;
+ id |   name    |        email
+----+-----------+----------------------
+  1 | sam       | greddy@softility.com
+  2 | sample1-1 | expire@gmail.com
+(2 rows)
+
+mydatabase=# exit
+
+
